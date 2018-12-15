@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: client/changelog.yml
+      relativeToChangelogFile: true
+  - include:
+      file: risk/changelog.yml
+      relativeToChangelogFile: true
+  - include:
+      file: client_risk/changelog.yml
+      relativeToChangelogFile: true

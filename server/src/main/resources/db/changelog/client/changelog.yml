@@ -1,0 +1,9 @@
+databaseChangeLog:
+    - changeSet:
+        id: client-create_table-ddl
+        comment: Cria tabela client
+        author: janderson
+        changes:
+        - sqlFile:
+            path: client-create_table-ddl.sql
+            relativeToChangelogFile: true

@@ -1,38 +1,36 @@
 package com.br.client.model;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 import java.math.BigDecimal;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
-public class Client {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Risk {
 
     @NotNull
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Long clientId;
+    private Long riskId;
 
     @NotNull
-    @Size(min = 1, max = 200)
+    @Size(min = 1, max = 20)
     private String txName;
 
     @NotNull
-    @Digits(integer = 12, fraction = 2)
-    private BigDecimal dcCreditLimit;
+    @Digits(integer = 3, fraction = 2)
+    private BigDecimal dcPercentageInterest;
 
-    @NotEmpty
-    Set<Risk> risks;
 }

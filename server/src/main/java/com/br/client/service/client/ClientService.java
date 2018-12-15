@@ -1,4 +1,4 @@
-package com.br.client.service;
+package com.br.client.service.client;
 
 import com.br.client.dto.ClientDto;
 

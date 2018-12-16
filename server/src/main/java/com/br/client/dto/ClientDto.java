@@ -27,6 +27,9 @@ public class ClientDto implements Comparable<ClientDto>{
     @Digits(integer = 12, fraction = 2)
     private BigDecimal creditLimit;
 
+    @Digits(integer = 3, fraction = 2)
+    private BigDecimal percentageInterest;
+
     @NotNull
     private Long riskId;
 

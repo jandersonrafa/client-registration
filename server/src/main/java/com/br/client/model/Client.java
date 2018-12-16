@@ -18,7 +18,6 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 public class Client {
 
-    @NotNull
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long clientId;

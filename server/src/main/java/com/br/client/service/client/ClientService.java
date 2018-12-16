@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ClientService {
-    void save(ClientDto dto);
+    Long save(ClientDto dto);
 
     List<ClientDto> findAll();
 
     Optional<ClientDto> findDtoById(Long clientId);
+
+    void deleteById(Long clientId);
 }

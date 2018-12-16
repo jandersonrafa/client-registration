@@ -12,6 +12,7 @@ public class ClientMapper {
     public Client toModel(ClientDto dto) {
         return Client
                 .builder()
+                .txName(dto.getName())
                 .clientId(dto.getClientId())
                 .dcCreditLimit(dto.getCreditLimit())
                 .build();
@@ -22,6 +23,7 @@ public class ClientMapper {
                 .builder()
                 .clientId(model.getClientId())
                 .creditLimit(model.getDcCreditLimit())
+                .percentageInterest(model.getDcPercentageInterest())
                 .name(model.getTxName())
                 .riskId(model.getRisk().getRiskId())
                 .build();

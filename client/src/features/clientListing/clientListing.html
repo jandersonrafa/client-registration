@@ -1,0 +1,25 @@
+<div id="clientListing-header" class="jumbotron">
+  <greeting name="clientListing.name"></greeting>
+</div>
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Limite de crédito</th>
+          <th scope="col">Risco(%)</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="client in clientListing.clients">
+          <td>{{ client.name }}</td>
+          <td>{{ client.creditLimit }}</td>
+          <td>{{ client.percentageInterest }}</td>
+          <td><button type="submit" ng-click="clientListing.delete(client.clientId)" class="btn btn-primary">Excluir</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

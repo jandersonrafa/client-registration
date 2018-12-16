@@ -27,11 +27,12 @@ public class ClientServiceImpl implements ClientService {
     private ClientMapper clientMapper;
 
     @Override
-    public void save(ClientDto dto) {
+    public Long save(ClientDto dto) {
         Client model = clientMapper.toModel(dto);
         Risk risk = riskService.findById(dto.getRiskId()).get();
         model.setRisk(risk);
-        clientRepository.save(model);
+        model.setDcPercentageInterest(risk.getDcPercentageInterest());
+        return clientRepository.save(model).getClientId();
     }
 
     @Override
@@ -46,6 +47,11 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Optional<ClientDto> findDtoById(Long clientId) {
         return clientRepository.findById(clientId).map(clientMapper::toDto);
+    }
+
+    @Override
+    public void deleteById(Long clientId) {
+        clientRepository.deleteById(clientId);
     }
 
 }

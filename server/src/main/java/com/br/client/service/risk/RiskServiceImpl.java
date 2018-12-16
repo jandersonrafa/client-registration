@@ -28,6 +28,6 @@ public class RiskServiceImpl implements  RiskService{
 
     @Override
     public List<RiskDto> findAll() {
-        return riskRepository.findAll().stream().sorted().map(riskMapper::toDto).collect(toList());
+        return riskRepository.findAll().stream().map(riskMapper::toDto).sorted().collect(toList());
     }
 }

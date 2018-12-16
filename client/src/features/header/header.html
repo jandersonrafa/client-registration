@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li ng-class="{'active': header.$state.current.name === 'header.home'}" class="nav-item">
+        <a class="nav-link" href="home">Cadastro</a>
+      </li>
+      <li ng-class="{'active': header.$state.current.name === 'header.clientListing'}" class="nav-item">
+        <a class="nav-link" href="clientListing">Listagem</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div ui-view="content"></div>
+

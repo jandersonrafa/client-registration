@@ -1,0 +1,32 @@
+<div id="home-header" class="jumbotron">
+    <greeting name="home.name"></greeting>
+</div>
+
+<div class="container ">
+    <div class="row ">
+        <form>
+            <div class="form-row align-items-center ">
+
+                <div class="form-group col-md-12">
+                    <label for="name">Nome</label>
+                    <input maxlength="200" ng-model="home.client.name" type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="creditLimit">Limite de crédito (R$)</label>
+                    <input maxlength="8" ng-model="home.client.creditLimit" type="text" class="form-control" id="creditLimit">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputState">Risco</label>
+                    <select ng-change="changeRisk()" ng-model="home.client.riskId" class="form-control" id="risk">
+                        <option value="{{risk.riskId}}" ng-repeat="risk in home.risks">{{risk.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="creditLimit">Limite de crédito - Percentual Risco (R$)</label>
+                    {{home.getRealCreditLimit()}}
+                </div>
+                <button type="submit" ng-click="home.save()" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>

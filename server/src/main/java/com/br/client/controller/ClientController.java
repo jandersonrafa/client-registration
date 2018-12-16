@@ -33,4 +33,10 @@ public class ClientController {
         List<ClientDto> clients = clientService.findAll();
         return clients.isEmpty() ?  ResponseEntity.noContent().build() : ResponseEntity.ok(clients);
     }
+
+    @DeleteMapping("/{clientId}")
+    public ResponseEntity deleteById(@PathVariable Long clientId) {
+        clientService.deleteById(clientId);
+        return ResponseEntity.ok().build();
+    }
 }

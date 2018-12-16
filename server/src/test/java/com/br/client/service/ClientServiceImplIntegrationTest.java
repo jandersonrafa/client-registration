@@ -79,8 +79,8 @@ public class ClientServiceImplIntegrationTest {
         // Assert
         ClientDto clientResult = result.stream().filter(r -> r.getClientId().equals(clientId)).findFirst().get();
         assertEquals(dto.getName(), clientResult.getName());
-        assertEquals(dto.getCreditLimit().stripTrailingZeros(), clientResult.getCreditLimit().stripTrailingZeros());
-        assertEquals(dto.getPercentageInterest(), clientResult.getPercentageInterest());
+        assertEquals(dto.getCreditLimit().setScale(2,2 ), clientResult.getCreditLimit().setScale(2,2 ));
+        assertEquals(risk.getDcPercentageInterest().setScale(2,2 ), clientResult.getPercentageInterest().setScale(2,2 ));
         assertEquals(dto.getRiskId(), clientResult.getRiskId());
     }
 
